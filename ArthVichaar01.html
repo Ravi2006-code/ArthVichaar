@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArthVichaar - MSME Business Growth Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #06b6d4 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        .step-active {
+            background: linear-gradient(135deg, #3b82f6, #1e40af);
+            color: white;
+        }
+        .step-completed {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+        }
+        .progress-bar {
+            transition: width 0.5s ease;
+        }
+    </style>
+</head>
+<body class="min-h-full bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <h1 class="text-2xl font-bold text-blue-600">💼 ArthVichaar</h1>
+                    <span class="ml-2 text-sm text-gray-600">MSME Growth Platform</span>
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#home" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Home</a>
+                    <a href="#services" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Services</a>
+                    <a href="#policies" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Policies</a>
+                    <a href="#analyzer" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Business Analyzer</a>
+                    <a href="#contact" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Contact</a>
+                </div>
+                <button class="md:hidden text-gray-700" onclick="toggleMobileMenu()">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <div class="px-4 py-2 space-y-2">
+                <a href="#home" class="block py-2 text-gray-700 hover:text-blue-600">Home</a>
+                <a href="#services" class="block py-2 text-gray-700 hover:text-blue-600">Services</a>
+                <a href="#policies" class="block py-2 text-gray-700 hover:text-blue-600">Policies</a>
+                <a href="#analyzer" class="block py-2 text-gray-700 hover:text-blue-600">Business Analyzer</a>
+                <a href="#contact" class="block py-2 text-gray-700 hover:text-blue-600">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="gradient-bg text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl md:text-6xl font-bold mb-6">ArthVichaar</h2>
+            <p class="text-xl md:text-2xl mb-8 max-w-4xl mx-auto">
+                Empowering MSME Businesses with Smart Analysis, Funding Guidance & Government Policy Support
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button onclick="scrollToSection('analyzer')" class="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-all transform hover:scale-105">
+                    Start Business Analysis
+                </button>
+                <button onclick="scrollToSection('policies')" class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-blue-600 transition-all">
+                    View Government Policies
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h3 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Services</h3>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Comprehensive support for MSME business growth and development
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6 card-hover text-center">
+                    <div class="text-4xl mb-4">📊</div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-3">Business Analysis</h4>
+                    <p class="text-gray-600">Comprehensive analysis of your business idea, market potential, and growth prospects</p>
+                </div>
+                <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-6 card-hover text-center">
+                    <div class="text-4xl mb-4">💰</div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-3">Funding Assessment</h4>
+                    <p class="text-gray-600">Evaluate funding requirements and suggest optimal financing options</p>
+                </div>
+                <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-6 card-hover text-center">
+                    <div class="text-4xl mb-4">⚠️</div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-3">Risk Analysis</h4>
+                    <p class="text-gray-600">Identify potential risks and provide mitigation strategies for your business</p>
+                </div>
+                <div class="bg-gradient-to-br from-orange-50 to-orange-100 rounded-xl p-6 card-hover text-center">
+                    <div class="text-4xl mb-4">🏛️</div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-3">Policy Guidance</h4>
+                    <p class="text-gray-600">Access to latest government schemes and policies for MSME support</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Government Policies Section -->
+    <section id="policies" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h3 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Government Policies & Schemes</h3>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Latest government initiatives to support MSME businesses
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl p-6 shadow-lg card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 p-2 rounded-lg mr-3">
+                            <div class="text-2xl">🏦</div>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-800">MUDRA Loan Scheme</h4>
+                    </div>
+                    <p class="text-gray-600 mb-4">Loans up to ₹10 lakhs for micro and small enterprises without collateral</p>
+                    <ul class="text-sm text-gray-600 space-y-1 mb-4">
+                        <li>• Shishu: Up to ₹50,000</li>
+                        <li>• Kishore: ₹50,000 - ₹5 lakhs</li>
+                        <li>• Tarun: ₹5 - ₹10 lakhs</li>
+                    </ul>
+                    <a href="https://www.mudra.org.in/" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-blue-700 transition-colors">
+                        Apply Now →
+                    </a>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-lg card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-green-100 p-2 rounded-lg mr-3">
+                            <div class="text-2xl">🚀</div>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-800">Startup India</h4>
+                    </div>
+                    <p class="text-gray-600 mb-4">Government initiative to promote startup ecosystem in India</p>
+                    <ul class="text-sm text-gray-600 space-y-1 mb-4">
+                        <li>• Tax exemptions for 3 years</li>
+                        <li>• Fast-track patent examination</li>
+                        <li>• Fund of Funds support</li>
+                    </ul>
+                    <a href="https://www.startupindia.gov.in/" target="_blank" rel="noopener noreferrer" class="inline-block bg-green-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-green-700 transition-colors">
+                        Apply Now →
+                    </a>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-lg card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-purple-100 p-2 rounded-lg mr-3">
+                            <div class="text-2xl">🏭</div>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-800">Make in India</h4>
+                    </div>
+                    <p class="text-gray-600 mb-4">Initiative to encourage manufacturing and job creation</p>
+                    <ul class="text-sm text-gray-600 space-y-1 mb-4">
+                        <li>• Ease of doing business</li>
+                        <li>• Infrastructure development</li>
+                        <li>• Skill development programs</li>
+                    </ul>
+                    <a href="https://www.makeinindia.com/" target="_blank" rel="noopener noreferrer" class="inline-block bg-purple-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-purple-700 transition-colors">
+                        Learn More →
+                    </a>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-lg card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-yellow-100 p-2 rounded-lg mr-3">
+                            <div class="text-2xl">💳</div>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-800">Credit Guarantee Scheme</h4>
+                    </div>
+                    <p class="text-gray-600 mb-4">Collateral-free loans for MSMEs up to ₹2 crores</p>
+                    <ul class="text-sm text-gray-600 space-y-1 mb-4">
+                        <li>• 85% guarantee coverage</li>
+                        <li>• Reduced interest rates</li>
+                        <li>• Quick processing</li>
+                    </ul>
+                    <a href="https://www.cgtmse.in/" target="_blank" rel="noopener noreferrer" class="inline-block bg-yellow-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-yellow-700 transition-colors">
+                        Apply Now →
+                    </a>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-lg card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-red-100 p-2 rounded-lg mr-3">
+                            <div class="text-2xl">📱</div>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-800">Digital India</h4>
+                    </div>
+                    <p class="text-gray-600 mb-4">Digital infrastructure and services for businesses</p>
+                    <ul class="text-sm text-gray-600 space-y-1 mb-4">
+                        <li>• Digital payment systems</li>
+                        <li>• Online government services</li>
+                        <li>• Digital literacy programs</li>
+                    </ul>
+                    <a href="https://www.digitalindia.gov.in/" target="_blank" rel="noopener noreferrer" class="inline-block bg-red-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-red-700 transition-colors">
+                        Learn More →
+                    </a>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-lg card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-indigo-100 p-2 rounded-lg mr-3">
+                            <div class="text-2xl">🎯</div>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-800">Stand Up India</h4>
+                    </div>
+                    <p class="text-gray-600 mb-4">Loans for SC/ST and women entrepreneurs</p>
+                    <ul class="text-sm text-gray-600 space-y-1 mb-4">
+                        <li>• ₹10 lakhs to ₹1 crore loans</li>
+                        <li>• Greenfield enterprises</li>
+                        <li>• Handholding support</li>
+                    </ul>
+                    <a href="https://www.standupmitra.in/" target="_blank" rel="noopener noreferrer" class="inline-block bg-indigo-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-indigo-700 transition-colors">
+                        Apply Now →
+                    </a>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-lg card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-teal-100 p-2 rounded-lg mr-3">
+                            <div class="text-2xl">🌾</div>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-800">PM-KISAN Scheme</h4>
+                    </div>
+                    <p class="text-gray-600 mb-4">Direct income support to farmers and agri-entrepreneurs</p>
+                    <ul class="text-sm text-gray-600 space-y-1 mb-4">
+                        <li>• ₹6,000 per year direct transfer</li>
+                        <li>• Support for farming activities</li>
+                        <li>• Easy online registration</li>
+                    </ul>
+                    <a href="https://pmkisan.gov.in/" target="_blank" rel="noopener noreferrer" class="inline-block bg-teal-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-teal-700 transition-colors">
+                        Apply Now →
+                    </a>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-lg card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-pink-100 p-2 rounded-lg mr-3">
+                            <div class="text-2xl">👩‍💼</div>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-800">Mahila Udyam Nidhi</h4>
+                    </div>
+                    <p class="text-gray-600 mb-4">Special scheme for women entrepreneurs</p>
+                    <ul class="text-sm text-gray-600 space-y-1 mb-4">
+                        <li>• Up to ₹10 lakhs funding</li>
+                        <li>• Concessional interest rates</li>
+                        <li>• Business development support</li>
+                    </ul>
+                    <a href="https://www.sidbi.in/en/mahila-udyam-nidhi-scheme" target="_blank" rel="noopener noreferrer" class="inline-block bg-pink-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-pink-700 transition-colors">
+                        Apply Now →
+                    </a>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-lg card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-orange-100 p-2 rounded-lg mr-3">
+                            <div class="text-2xl">🏘️</div>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-800">PM SVANidhi Scheme</h4>
+                    </div>
+                    <p class="text-gray-600 mb-4">Micro-credit scheme for street vendors</p>
+                    <ul class="text-sm text-gray-600 space-y-1 mb-4">
+                        <li>• ₹10,000 working capital loan</li>
+                        <li>• Digital payment incentives</li>
+                        <li>• Skill development training</li>
+                    </ul>
+                    <a href="https://pmsvanidhi.mohua.gov.in/" target="_blank" rel="noopener noreferrer" class="inline-block bg-orange-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-orange-700 transition-colors">
+                        Apply Now →
+                    </a>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-lg card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-cyan-100 p-2 rounded-lg mr-3">
+                            <div class="text-2xl">🔧</div>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-800">PMEGP Scheme</h4>
+                    </div>
+                    <p class="text-gray-600 mb-4">Prime Minister's Employment Generation Programme</p>
+                    <ul class="text-sm text-gray-600 space-y-1 mb-4">
+                        <li>• Up to ₹25 lakhs for manufacturing</li>
+                        <li>• Up to ₹10 lakhs for service</li>
+                        <li>• 15-35% subsidy available</li>
+                    </ul>
+                    <a href="https://www.kviconline.gov.in/pmegpeportal/pmegphome/index.jsp" target="_blank" rel="noopener noreferrer" class="inline-block bg-cyan-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-cyan-700 transition-colors">
+                        Apply Now →
+                    </a>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-lg card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-lime-100 p-2 rounded-lg mr-3">
+                            <div class="text-2xl">⚡</div>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-800">Solar Rooftop Scheme</h4>
+                    </div>
+                    <p class="text-gray-600 mb-4">Subsidies for solar power installations</p>
+                    <ul class="text-sm text-gray-600 space-y-1 mb-4">
+                        <li>• Up to 40% subsidy</li>
+                        <li>• Reduce electricity costs</li>
+                        <li>• Environmental benefits</li>
+                    </ul>
+                    <a href="https://solarrooftop.gov.in/" target="_blank" rel="noopener noreferrer" class="inline-block bg-lime-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-lime-700 transition-colors">
+                        Apply Now →
+                    </a>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-lg card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-violet-100 p-2 rounded-lg mr-3">
+                            <div class="text-2xl">🎓</div>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-800">Skill India Mission</h4>
+                    </div>
+                    <p class="text-gray-600 mb-4">Skill development and training programs</p>
+                    <ul class="text-sm text-gray-600 space-y-1 mb-4">
+                        <li>• Free skill training</li>
+                        <li>• Industry-relevant courses</li>
+                        <li>• Placement assistance</li>
+                    </ul>
+                    <a href="https://www.skillindia.gov.in/" target="_blank" rel="noopener noreferrer" class="inline-block bg-violet-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-violet-700 transition-colors">
+                        Enroll Now →
+                    </a>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-lg card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-emerald-100 p-2 rounded-lg mr-3">
+                            <div class="text-2xl">🏪</div>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-800">GeM Portal</h4>
+                    </div>
+                    <p class="text-gray-600 mb-4">Government e-Marketplace for MSMEs</p>
+                    <ul class="text-sm text-gray-600 space-y-1 mb-4">
+                        <li>• Direct government procurement</li>
+                        <li>• Transparent bidding process</li>
+                        <li>• Quick payment system</li>
+                    </ul>
+                    <a href="https://gem.gov.in/" target="_blank" rel="noopener noreferrer" class="inline-block bg-emerald-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-emerald-700 transition-colors">
+                        Register Now →
+                    </a>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-lg card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-rose-100 p-2 rounded-lg mr-3">
+                            <div class="text-2xl">🏭</div>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-800">Technology Upgradation</h4>
+                    </div>
+                    <p class="text-gray-600 mb-4">Support for technology modernization</p>
+                    <ul class="text-sm text-gray-600 space-y-1 mb-4">
+                        <li>• Subsidized technology loans</li>
+                        <li>• Equipment financing</li>
+                        <li>• Technical consultancy</li>
+                    </ul>
+                    <a href="https://msme.gov.in/schemes-initiatives/schemes-programmes" target="_blank" rel="noopener noreferrer" class="inline-block bg-rose-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-rose-700 transition-colors">
+                        Learn More →
+                    </a>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-lg card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-amber-100 p-2 rounded-lg mr-3">
+                            <div class="text-2xl">🌍</div>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-800">Export Promotion</h4>
+                    </div>
+                    <p class="text-gray-600 mb-4">Support for export-oriented businesses</p>
+                    <ul class="text-sm text-gray-600 space-y-1 mb-4">
+                        <li>• Export incentives</li>
+                        <li>• Market development assistance</li>
+                        <li>• Quality certification support</li>
+                    </ul>
+                    <a href="https://www.dgft.gov.in/" target="_blank" rel="noopener noreferrer" class="inline-block bg-amber-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-amber-700 transition-colors">
+                        Explore Schemes →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Analyzer Section -->
+    <section id="analyzer" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Business Analyzer</h3>
+                <p class="text-xl text-gray-600">
+                    Get comprehensive analysis of your business idea with funding assessment and risk evaluation
+                </p>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="mb-8">
+                <div class="flex justify-between items-center mb-2">
+                    <span class="text-sm font-medium text-gray-700">Progress</span>
+                    <span id="progress-text" class="text-sm font-medium text-gray-700">Step 1 of 4</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div id="progress-bar" class="bg-blue-600 h-2 rounded-full progress-bar" style="width: 25%"></div>
+                </div>
+            </div>
+
+            <!-- Step Indicators -->
+            <div class="flex justify-center mb-8">
+                <div class="flex space-x-4">
+                    <div id="step-1" class="step-active w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold">1</div>
+                    <div id="step-2" class="bg-gray-200 text-gray-600 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold">2</div>
+                    <div id="step-3" class="bg-gray-200 text-gray-600 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold">3</div>
+                    <div id="step-4" class="bg-gray-200 text-gray-600 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold">4</div>
+                </div>
+            </div>
+
+            <!-- Form Container -->
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <form id="business-form" onsubmit="handleFormSubmit(event)">
+                    <!-- Step 1: Business Information -->
+                    <div id="form-step-1" class="form-step">
+                        <h4 class="text-2xl font-bold text-gray-800 mb-6">Business Information</h4>
+                        <div class="space-y-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Business Name *</label>
+                                <input type="text" id="business-name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Enter your business name">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Business Type *</label>
+                                <select id="business-type" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                    <option value="">Select business type</option>
+                                    <option value="manufacturing">Manufacturing</option>
+                                    <option value="trading">Trading</option>
+                                    <option value="service">Service</option>
+                                    <option value="retail">Retail</option>
+                                    <option value="food">Food & Beverage</option>
+                                    <option value="technology">Technology</option>
+                                    <option value="healthcare">Healthcare</option>
+                                    <option value="education">Education</option>
+                                    <option value="agriculture">Agriculture</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Business Description</label>
+                                <textarea id="business-description" rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Briefly describe your business idea"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Location Information -->
+                    <div id="form-step-2" class="form-step hidden">
+                        <h4 class="text-2xl font-bold text-gray-800 mb-6">Location Information</h4>
+                        <div class="space-y-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">State *</label>
+                                <select id="business-state" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" onchange="updateDistricts()">
+                                    <option value="">Select state</option>
+                                    <option value="andhra-pradesh">Andhra Pradesh</option>
+                                    <option value="arunachal-pradesh">Arunachal Pradesh</option>
+                                    <option value="assam">Assam</option>
+                                    <option value="bihar">Bihar</option>
+                                    <option value="chhattisgarh">Chhattisgarh</option>
+                                    <option value="goa">Goa</option>
+                                    <option value="gujarat">Gujarat</option>
+                                    <option value="haryana">Haryana</option>
+                                    <option value="himachal-pradesh">Himachal Pradesh</option>
+                                    <option value="jharkhand">Jharkhand</option>
+                                    <option value="karnataka">Karnataka</option>
+                                    <option value="kerala">Kerala</option>
+                                    <option value="madhya-pradesh">Madhya Pradesh</option>
+                                    <option value="maharashtra">Maharashtra</option>
+                                    <option value="manipur">Manipur</option>
+                                    <option value="meghalaya">Meghalaya</option>
+                                    <option value="mizoram">Mizoram</option>
+                                    <option value="nagaland">Nagaland</option>
+                                    <option value="odisha">Odisha</option>
+                                    <option value="punjab">Punjab</option>
+                                    <option value="rajasthan">Rajasthan</option>
+                                    <option value="sikkim">Sikkim</option>
+                                    <option value="tamil-nadu">Tamil Nadu</option>
+                                    <option value="telangana">Telangana</option>
+                                    <option value="tripura">Tripura</option>
+                                    <option value="uttar-pradesh">Uttar Pradesh</option>
+                                    <option value="uttarakhand">Uttarakhand</option>
+                                    <option value="west-bengal">West Bengal</option>
+                                    <option value="delhi">Delhi</option>
+                                    <option value="chandigarh">Chandigarh</option>
+                                    <option value="puducherry">Puducherry</option>
+                                    <option value="jammu-kashmir">Jammu & Kashmir</option>
+                                    <option value="ladakh">Ladakh</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">District *</label>
+                                <select id="business-district" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                    <option value="">Select district</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">City *</label>
+                                <input type="text" id="business-city" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Enter city name">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Area Type *</label>
+                                <select id="area-type" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                    <option value="">Select area type</option>
+                                    <option value="urban">Urban</option>
+                                    <option value="semi-urban">Semi-Urban</option>
+                                    <option value="rural">Rural</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Funding Information -->
+                    <div id="form-step-3" class="form-step hidden">
+                        <h4 class="text-2xl font-bold text-gray-800 mb-6">Funding Information</h4>
+                        <div class="space-y-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Available Funding (₹) *</label>
+                                <input type="number" id="available-funding" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Enter amount in rupees">
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Funding Source Preference</label>
+                                <select id="funding-source" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                    <option value="">Select preferred source</option>
+                                    <option value="bank-loan">Bank Loan</option>
+                                    <option value="government-scheme">Government Scheme</option>
+                                    <option value="private-investor">Private Investor</option>
+                                    <option value="self-funded">Self Funded</option>
+                                    <option value="family-friends">Family & Friends</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Additional Information -->
+                    <div id="form-step-4" class="form-step hidden">
+                        <h4 class="text-2xl font-bold text-gray-800 mb-6">Additional Information</h4>
+                        <div class="space-y-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Expected Monthly Revenue (₹)</label>
+                                <input type="number" id="expected-revenue" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Enter expected monthly revenue">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Number of Employees</label>
+                                <select id="employee-count" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                    <option value="">Select employee count</option>
+                                    <option value="1-5">1-5 employees</option>
+                                    <option value="6-10">6-10 employees</option>
+                                    <option value="11-25">11-25 employees</option>
+                                    <option value="26-50">26-50 employees</option>
+                                    <option value="50+">50+ employees</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Business Experience</label>
+                                <select id="business-experience" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                    <option value="">Select experience level</option>
+                                    <option value="first-time">First-time entrepreneur</option>
+                                    <option value="1-3-years">1-3 years experience</option>
+                                    <option value="3-5-years">3-5 years experience</option>
+                                    <option value="5+-years">5+ years experience</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Buttons -->
+                    <div class="flex justify-between mt-8">
+                        <button type="button" id="prev-btn" onclick="previousStep()" class="bg-gray-300 text-gray-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-400 transition-colors hidden">
+                            Previous
+                        </button>
+                        <button type="button" id="next-btn" onclick="nextStep()" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors ml-auto">
+                            Next
+                        </button>
+                        <button type="submit" id="submit-btn" class="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors ml-auto hidden">
+                            Analyze Business
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <div id="results-section" class="py-20 bg-gray-50 hidden">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Business Analysis Report</h3>
+                <p class="text-xl text-gray-600">Comprehensive analysis of your business plan</p>
+            </div>
+            <div id="analysis-results" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Results will be populated here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h3 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Get Expert Consultation</h3>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Need personalized guidance? Our experts are here to help you succeed
+                </p>
+            </div>
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div>
+                    <h4 class="text-2xl font-bold text-gray-800 mb-8">Contact Information</h4>
+                    <div class="space-y-6">
+                        <div class="flex items-center">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <div class="text-xl">📧</div>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-gray-800">Email</div>
+                                <div class="text-gray-600">support@arthvichaar.com</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <div class="text-xl">📞</div>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-gray-800">Phone</div>
+                                <div class="text-gray-600">+91 98765 43210</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <div class="text-xl">🕒</div>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-gray-800">Business Hours</div>
+                                <div class="text-gray-600">Mon-Fri: 9:00 AM - 6:00 PM</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 rounded-xl p-8">
+                    <form onsubmit="handleContactSubmit(event)" class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Your Name</label>
+                            <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                            <input type="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+                            <input type="tel" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                            <textarea rows="4" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="How can we help you?"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <div class="text-2xl font-bold mb-4">💼 ArthVichaar</div>
+                    <p class="text-gray-400 mb-4">
+                        Empowering MSME businesses with smart analysis, funding guidance, and government policy support for sustainable growth.
+                    </p>
+                </div>
+                <div>
+                    <h5 class="font-semibold mb-4">Services</h5>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#analyzer" class="hover:text-white transition-colors">Business Analysis</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Funding Assessment</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Risk Analysis</a></li>
+                        <li><a href="#policies" class="hover:text-white transition-colors">Policy Guidance</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-semibold mb-4">Quick Links</h5>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#home" class="hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Services</a></li>
+                        <li><a href="#policies" class="hover:text-white transition-colors">Policies</a></li>
+                        <li><a href="#contact" class="hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 ArthVichaar. All rights reserved. Empowering MSME businesses across India.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let currentStep = 1;
+        const totalSteps = 4;
+
+        // District data for Indian states
+        const stateDistricts = {
+            'andhra-pradesh': ['Anantapur', 'Chittoor', 'East Godavari', 'Guntur', 'Krishna', 'Kurnool', 'Nellore', 'Prakasam', 'Srikakulam', 'Visakhapatnam', 'Vizianagaram', 'West Godavari', 'YSR Kadapa'],
+            'arunachal-pradesh': ['Anjaw', 'Changlang', 'Dibang Valley', 'East Kameng', 'East Siang', 'Kamle', 'Kra Daadi', 'Kurung Kumey', 'Lepa Rada', 'Lohit', 'Longding', 'Lower Dibang Valley', 'Lower Siang', 'Lower Subansiri', 'Namsai', 'Pakke Kessang', 'Papum Pare', 'Shi Yomi', 'Siang', 'Tawang', 'Tirap', 'Upper Siang', 'Upper Subansiri', 'West Kameng', 'West Siang'],
+            'assam': ['Baksa', 'Barpeta', 'Biswanath', 'Bongaigaon', 'Cachar', 'Charaideo', 'Chirang', 'Darrang', 'Dhemaji', 'Dhubri', 'Dibrugarh', 'Goalpara', 'Golaghat', 'Hailakandi', 'Hojai', 'Jorhat', 'Kamrup', 'Kamrup Metropolitan', 'Karbi Anglong', 'Karimganj', 'Kokrajhar', 'Lakhimpur', 'Majuli', 'Morigaon', 'Nagaon', 'Nalbari', 'Dima Hasao', 'Sivasagar', 'Sonitpur', 'South Salmara-Mankachar', 'Tinsukia', 'Udalguri', 'West Karbi Anglong'],
+            'bihar': ['Araria', 'Arwal', 'Aurangabad', 'Banka', 'Begusarai', 'Bhagalpur', 'Bhojpur', 'Buxar', 'Darbhanga', 'East Champaran', 'Gaya', 'Gopalganj', 'Jamui', 'Jehanabad', 'Kaimur', 'Katihar', 'Khagaria', 'Kishanganj', 'Lakhisarai', 'Madhepura', 'Madhubani', 'Munger', 'Muzaffarpur', 'Nalanda', 'Nawada', 'Patna', 'Purnia', 'Rohtas', 'Saharsa', 'Samastipur', 'Saran', 'Sheikhpura', 'Sheohar', 'Sitamarhi', 'Siwan', 'Supaul', 'Vaishali', 'West Champaran'],
+            'chhattisgarh': ['Balod', 'Baloda Bazar', 'Balrampur', 'Bastar', 'Bemetara', 'Bijapur', 'Bilaspur', 'Dantewada', 'Dhamtari', 'Durg', 'Gariaband', 'Gaurela Pendra Marwahi', 'Janjgir Champa', 'Jashpur', 'Kabirdham', 'Kanker', 'Kondagaon', 'Korba', 'Koriya', 'Mahasamund', 'Mungeli', 'Narayanpur', 'Raigarh', 'Raipur', 'Rajnandgaon', 'Sukma', 'Surajpur', 'Surguja'],
+            'goa': ['North Goa', 'South Goa'],
+            'gujarat': ['Ahmedabad', 'Amreli', 'Anand', 'Aravalli', 'Banaskantha', 'Bharuch', 'Bhavnagar', 'Botad', 'Chhota Udaipur', 'Dahod', 'Dang', 'Devbhoomi Dwarka', 'Gandhinagar', 'Gir Somnath', 'Jamnagar', 'Junagadh', 'Kheda', 'Kutch', 'Mahisagar', 'Mehsana', 'Morbi', 'Narmada', 'Navsari', 'Panchmahal', 'Patan', 'Porbandar', 'Rajkot', 'Sabarkantha', 'Surat', 'Surendranagar', 'Tapi', 'Vadodara', 'Valsad'],
+            'haryana': ['Ambala', 'Bhiwani', 'Charkhi Dadri', 'Faridabad', 'Fatehabad', 'Gurugram', 'Hisar', 'Jhajjar', 'Jind', 'Kaithal', 'Karnal', 'Kurukshetra', 'Mahendragarh', 'Nuh', 'Palwal', 'Panchkula', 'Panipat', 'Rewari', 'Rohtak', 'Sirsa', 'Sonipat', 'Yamunanagar'],
+            'himachal-pradesh': ['Bilaspur', 'Chamba', 'Hamirpur', 'Kangra', 'Kinnaur', 'Kullu', 'Lahaul Spiti', 'Mandi', 'Shimla', 'Sirmaur', 'Solan', 'Una'],
+            'jharkhand': ['Bokaro', 'Chatra', 'Deoghar', 'Dhanbad', 'Dumka', 'East Singhbhum', 'Garhwa', 'Giridih', 'Godda', 'Gumla', 'Hazaribagh', 'Jamtara', 'Khunti', 'Koderma', 'Latehar', 'Lohardaga', 'Pakur', 'Palamu', 'Ramgarh', 'Ranchi', 'Sahebganj', 'Seraikela Kharsawan', 'Simdega', 'West Singhbhum'],
+            'karnataka': ['Bagalkot', 'Ballari', 'Belagavi', 'Bengaluru Rural', 'Bengaluru Urban', 'Bidar', 'Chamarajanagar', 'Chikballapur', 'Chikkamagaluru', 'Chitradurga', 'Dakshina Kannada', 'Davanagere', 'Dharwad', 'Gadag', 'Hassan', 'Haveri', 'Kalaburagi', 'Kodagu', 'Kolar', 'Koppal', 'Mandya', 'Mysuru', 'Raichur', 'Ramanagara', 'Shivamogga', 'Tumakuru', 'Udupi', 'Uttara Kannada', 'Vijayapura', 'Yadgir'],
+            'kerala': ['Alappuzha', 'Ernakulam', 'Idukki', 'Kannur', 'Kasaragod', 'Kollam', 'Kottayam', 'Kozhikode', 'Malappuram', 'Palakkad', 'Pathanamthitta', 'Thiruvananthapuram', 'Thrissur', 'Wayanad'],
+            'madhya-pradesh': ['Agar Malwa', 'Alirajpur', 'Anuppur', 'Ashoknagar', 'Balaghat', 'Barwani', 'Betul', 'Bhind', 'Bhopal', 'Burhanpur', 'Chachaura', 'Chhatarpur', 'Chhindwara', 'Damoh', 'Datia', 'Dewas', 'Dhar', 'Dindori', 'Guna', 'Gwalior', 'Harda', 'Hoshangabad', 'Indore', 'Jabalpur', 'Jhabua', 'Katni', 'Khandwa', 'Khargone', 'Maihar', 'Mandla', 'Mandsaur', 'Morena', 'Narsinghpur', 'Neemuch', 'Niwari', 'Panna', 'Raisen', 'Rajgarh', 'Ratlam', 'Rewa', 'Sagar', 'Satna', 'Sehore', 'Seoni', 'Shahdol', 'Shajapur', 'Sheopur', 'Shivpuri', 'Sidhi', 'Singrauli', 'Tikamgarh', 'Ujjain', 'Umaria', 'Vidisha'],
+            'maharashtra': ['Ahmednagar', 'Akola', 'Amravati', 'Aurangabad', 'Beed', 'Bhandara', 'Buldhana', 'Chandrapur', 'Dhule', 'Gadchiroli', 'Gondia', 'Hingoli', 'Jalgaon', 'Jalna', 'Kolhapur', 'Latur', 'Mumbai City', 'Mumbai Suburban', 'Nagpur', 'Nanded', 'Nandurbar', 'Nashik', 'Osmanabad', 'Palghar', 'Parbhani', 'Pune', 'Raigad', 'Ratnagiri', 'Sangli', 'Satara', 'Sindhudurg', 'Solapur', 'Thane', 'Wardha', 'Washim', 'Yavatmal'],
+            'manipur': ['Bishnupur', 'Chandel', 'Churachandpur', 'Imphal East', 'Imphal West', 'Jiribam', 'Kakching', 'Kamjong', 'Kangpokpi', 'Noney', 'Pherzawl', 'Senapati', 'Tamenglong', 'Tengnoupal', 'Thoubal', 'Ukhrul'],
+            'meghalaya': ['East Garo Hills', 'East Jaintia Hills', 'East Khasi Hills', 'North Garo Hills', 'Ri Bhoi', 'South Garo Hills', 'South West Garo Hills', 'South West Khasi Hills', 'West Garo Hills', 'West Jaintia Hills', 'West Khasi Hills'],
+            'mizoram': ['Aizawl', 'Champhai', 'Hnahthial', 'Kolasib', 'Khawzawl', 'Lawngtlai', 'Lunglei', 'Mamit', 'Saiha', 'Saitual', 'Serchhip'],
+            'nagaland': ['Dimapur', 'Kiphire', 'Kohima', 'Longleng', 'Mokokchung', 'Mon', 'Noklak', 'Peren', 'Phek', 'Tuensang', 'Wokha', 'Zunheboto'],
+            'odisha': ['Angul', 'Balangir', 'Balasore', 'Bargarh', 'Bhadrak', 'Boudh', 'Cuttack', 'Deogarh', 'Dhenkanal', 'Gajapati', 'Ganjam', 'Jagatsinghpur', 'Jajpur', 'Jharsuguda', 'Kalahandi', 'Kandhamal', 'Kendrapara', 'Kendujhar', 'Khordha', 'Koraput', 'Malkangiri', 'Mayurbhanj', 'Nabarangpur', 'Nayagarh', 'Nuapada', 'Puri', 'Rayagada', 'Sambalpur', 'Subarnapur', 'Sundargarh'],
+            'punjab': ['Amritsar', 'Barnala', 'Bathinda', 'Faridkot', 'Fatehgarh Sahib', 'Fazilka', 'Ferozepur', 'Gurdaspur', 'Hoshiarpur', 'Jalandhar', 'Kapurthala', 'Ludhiana', 'Malerkotla', 'Mansa', 'Moga', 'Muktsar', 'Pathankot', 'Patiala', 'Rupnagar', 'Sangrur', 'SAS Nagar', 'Shaheed Bhagat Singh Nagar', 'Tarn Taran'],
+            'rajasthan': ['Ajmer', 'Alwar', 'Banswara', 'Baran', 'Barmer', 'Bharatpur', 'Bhilwara', 'Bikaner', 'Bundi', 'Chittorgarh', 'Churu', 'Dausa', 'Dholpur', 'Dungarpur', 'Hanumangarh', 'Jaipur', 'Jaisalmer', 'Jalore', 'Jhalawar', 'Jhunjhunu', 'Jodhpur', 'Karauli', 'Kota', 'Nagaur', 'Pali', 'Pratapgarh', 'Rajsamand', 'Sawai Madhopur', 'Sikar', 'Sirohi', 'Sri Ganganagar', 'Tonk', 'Udaipur'],
+            'sikkim': ['East Sikkim', 'North Sikkim', 'South Sikkim', 'West Sikkim'],
+            'tamil-nadu': ['Ariyalur', 'Chengalpattu', 'Chennai', 'Coimbatore', 'Cuddalore', 'Dharmapuri', 'Dindigul', 'Erode', 'Kallakurichi', 'Kanchipuram', 'Kanyakumari', 'Karur', 'Krishnagiri', 'Madurai', 'Mayiladuthurai', 'Nagapattinam', 'Namakkal', 'Nilgiris', 'Perambalur', 'Pudukkottai', 'Ramanathapuram', 'Ranipet', 'Salem', 'Sivaganga', 'Tenkasi', 'Thanjavur', 'Theni', 'Thoothukudi', 'Tiruchirappalli', 'Tirunelveli', 'Tirupattur', 'Tiruppur', 'Tiruvallur', 'Tiruvannamalai', 'Tiruvarur', 'Vellore', 'Viluppuram', 'Virudhunagar'],
+            'telangana': ['Adilabad', 'Bhadradri Kothagudem', 'Hyderabad', 'Jagtial', 'Jangaon', 'Jayashankar', 'Jogulamba', 'Kamareddy', 'Karimnagar', 'Khammam', 'Komaram Bheem', 'Mahabubabad', 'Mahbubnagar', 'Mancherial', 'Medak', 'Medchal', 'Mulugu', 'Nagarkurnool', 'Nalgonda', 'Narayanpet', 'Nirmal', 'Nizamabad', 'Peddapalli', 'Rajanna Sircilla', 'Ranga Reddy', 'Sangareddy', 'Siddipet', 'Suryapet', 'Vikarabad', 'Wanaparthy', 'Warangal Rural', 'Warangal Urban', 'Yadadri Bhuvanagiri'],
+            'tripura': ['Dhalai', 'Gomati', 'Khowai', 'North Tripura', 'Sepahijala', 'South Tripura', 'Unakoti', 'West Tripura'],
+            'uttar-pradesh': ['Agra', 'Aligarh', 'Ambedkar Nagar', 'Amethi', 'Amroha', 'Auraiya', 'Ayodhya', 'Azamgarh', 'Baghpat', 'Bahraich', 'Ballia', 'Balrampur', 'Banda', 'Barabanki', 'Bareilly', 'Basti', 'Bhadohi', 'Bijnor', 'Budaun', 'Bulandshahr', 'Chandauli', 'Chitrakoot', 'Deoria', 'Etah', 'Etawah', 'Farrukhabad', 'Fatehpur', 'Firozabad', 'Gautam Buddha Nagar', 'Ghaziabad', 'Ghazipur', 'Gonda', 'Gorakhpur', 'Hamirpur', 'Hapur', 'Hardoi', 'Hathras', 'Jalaun', 'Jaunpur', 'Jhansi', 'Kannauj', 'Kanpur Dehat', 'Kanpur Nagar', 'Kasganj', 'Kaushambi', 'Kheri', 'Kushinagar', 'Lalitpur', 'Lucknow', 'Maharajganj', 'Mahoba', 'Mainpuri', 'Mathura', 'Mau', 'Meerut', 'Mirzapur', 'Moradabad', 'Muzaffarnagar', 'Pilibhit', 'Pratapgarh', 'Prayagraj', 'Raebareli', 'Rampur', 'Saharanpur', 'Sambhal', 'Sant Kabir Nagar', 'Shahjahanpur', 'Shamli', 'Shrawasti', 'Siddharthnagar', 'Sitapur', 'Sonbhadra', 'Sultanpur', 'Unnao', 'Varanasi'],
+            'uttarakhand': ['Almora', 'Bageshwar', 'Chamoli', 'Champawat', 'Dehradun', 'Haridwar', 'Nainital', 'Pauri', 'Pithoragarh', 'Rudraprayag', 'Tehri', 'Udham Singh Nagar', 'Uttarkashi'],
+            'west-bengal': ['Alipurduar', 'Bankura', 'Birbhum', 'Cooch Behar', 'Dakshin Dinajpur', 'Darjeeling', 'Hooghly', 'Howrah', 'Jalpaiguri', 'Jhargram', 'Kalimpong', 'Kolkata', 'Malda', 'Murshidabad', 'Nadia', 'North 24 Parganas', 'Paschim Bardhaman', 'Paschim Medinipur', 'Purba Bardhaman', 'Purba Medinipur', 'Purulia', 'South 24 Parganas', 'Uttar Dinajpur'],
+            'delhi': ['Central Delhi', 'East Delhi', 'New Delhi', 'North Delhi', 'North East Delhi', 'North West Delhi', 'Shahdara', 'South Delhi', 'South East Delhi', 'South West Delhi', 'West Delhi'],
+            'chandigarh': ['Chandigarh'],
+            'puducherry': ['Karaikal', 'Mahe', 'Puducherry', 'Yanam'],
+            'jammu-kashmir': ['Anantnag', 'Bandipora', 'Baramulla', 'Budgam', 'Doda', 'Ganderbal', 'Jammu', 'Kathua', 'Kishtwar', 'Kulgam', 'Kupwara', 'Poonch', 'Pulwama', 'Rajouri', 'Ramban', 'Reasi', 'Samba', 'Shopian', 'Srinagar', 'Udhampur'],
+            'ladakh': ['Kargil', 'Leh']
+        };
+
+        function updateDistricts() {
+            const stateSelect = document.getElementById('business-state');
+            const districtSelect = document.getElementById('business-district');
+            const selectedState = stateSelect.value;
+            
+            // Clear existing options
+            districtSelect.innerHTML = '<option value="">Select district</option>';
+            
+            if (selectedState && stateDistricts[selectedState]) {
+                stateDistricts[selectedState].forEach(district => {
+                    const option = document.createElement('option');
+                    option.value = district.toLowerCase().replace(/\s+/g, '-');
+                    option.textContent = district;
+                    districtSelect.appendChild(option);
+                });
+            }
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        function updateProgress() {
+            const progressBar = document.getElementById('progress-bar');
+            const progressText = document.getElementById('progress-text');
+            const percentage = (currentStep / totalSteps) * 100;
+            
+            progressBar.style.width = percentage + '%';
+            progressText.textContent = `Step ${currentStep} of ${totalSteps}`;
+            
+            // Update step indicators
+            for (let i = 1; i <= totalSteps; i++) {
+                const stepElement = document.getElementById(`step-${i}`);
+                if (i < currentStep) {
+                    stepElement.className = 'step-completed w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold';
+                } else if (i === currentStep) {
+                    stepElement.className = 'step-active w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold';
+                } else {
+                    stepElement.className = 'bg-gray-200 text-gray-600 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold';
+                }
+            }
+        }
+
+        function showStep(step) {
+            // Hide all steps
+            for (let i = 1; i <= totalSteps; i++) {
+                document.getElementById(`form-step-${i}`).classList.add('hidden');
+            }
+            
+            // Show current step
+            document.getElementById(`form-step-${step}`).classList.remove('hidden');
+            
+            // Update button visibility
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            const submitBtn = document.getElementById('submit-btn');
+            
+            if (step === 1) {
+                prevBtn.classList.add('hidden');
+            } else {
+                prevBtn.classList.remove('hidden');
+            }
+            
+            if (step === totalSteps) {
+                nextBtn.classList.add('hidden');
+                submitBtn.classList.remove('hidden');
+            } else {
+                nextBtn.classList.remove('hidden');
+                submitBtn.classList.add('hidden');
+            }
+            
+            updateProgress();
+        }
+
+        function nextStep() {
+            if (currentStep < totalSteps) {
+                currentStep++;
+                showStep(currentStep);
+            }
+        }
+
+        function previousStep() {
+            if (currentStep > 1) {
+                currentStep--;
+                showStep(currentStep);
+            }
+        }
+
+        function analyzeBusinessData(formData) {
+            const availableFunding = parseInt(formData.get('available-funding')) || 0;
+            const businessType = formData.get('business-type');
+            const areaType = formData.get('area-type');
+            const expectedRevenue = parseInt(formData.get('expected-revenue')) || 0;
+            const employeeCount = formData.get('employee-count');
+            const businessExperience = formData.get('business-experience');
+            
+            // Predict Required Funding based on business parameters
+            let baseFunding = 0;
+            
+            // Base funding by business type
+            const fundingByType = {
+                'manufacturing': 800000,
+                'trading': 300000,
+                'service': 200000,
+                'retail': 400000,
+                'food': 350000,
+                'technology': 500000,
+                'healthcare': 600000,
+                'education': 250000,
+                'agriculture': 450000,
+                'other': 300000
+            };
+            
+            baseFunding = fundingByType[businessType] || 300000;
+            
+            // Adjust based on area type
+            if (areaType === 'urban') baseFunding *= 1.5;
+            else if (areaType === 'semi-urban') baseFunding *= 1.2;
+            
+            // Adjust based on employee count
+            const employeeMultiplier = {
+                '1-5': 1,
+                '6-10': 1.3,
+                '11-25': 1.8,
+                '26-50': 2.5,
+                '50+': 3.5
+            };
+            baseFunding *= (employeeMultiplier[employeeCount] || 1);
+            
+            // Adjust based on expected revenue
+            if (expectedRevenue > 0) {
+                const revenueBasedFunding = expectedRevenue * 3; // 3 months operating capital
+                baseFunding = Math.max(baseFunding, revenueBasedFunding);
+            }
+            
+            const requiredFunding = Math.round(baseFunding);
+            
+            // Funding Analysis
+            const fundingGap = requiredFunding - availableFunding;
+            const fundingRatio = availableFunding / requiredFunding;
+            
+            let fundingStatus, fundingColor, fundingAdvice;
+            if (fundingRatio >= 0.8) {
+                fundingStatus = 'Excellent';
+                fundingColor = 'green';
+                fundingAdvice = 'Your funding is well-aligned with requirements. Consider keeping some buffer for unexpected expenses.';
+            } else if (fundingRatio >= 0.5) {
+                fundingStatus = 'Good';
+                fundingColor = 'blue';
+                fundingAdvice = 'You have decent funding. Consider exploring government schemes like MUDRA loans for the remaining amount.';
+            } else {
+                fundingStatus = 'Needs Attention';
+                fundingColor = 'red';
+                fundingAdvice = 'Significant funding gap exists. Explore multiple funding sources including government schemes and bank loans.';
+            }
+            
+            // Risk Analysis
+            let riskLevel, riskColor, riskFactors = [];
+            let riskScore = 0;
+            
+            if (fundingRatio < 0.3) riskScore += 3;
+            else if (fundingRatio < 0.6) riskScore += 1;
+            
+            if (areaType === 'rural') riskScore += 1;
+            else if (areaType === 'urban') riskScore -= 1;
+            
+            if (['manufacturing', 'technology'].includes(businessType)) riskScore += 1;
+            if (['service', 'trading'].includes(businessType)) riskScore -= 1;
+            
+            if (riskScore <= 1) {
+                riskLevel = 'Low Risk';
+                riskColor = 'green';
+                riskFactors = ['Adequate funding', 'Favorable business type', 'Good market conditions'];
+            } else if (riskScore <= 3) {
+                riskLevel = 'Medium Risk';
+                riskColor = 'yellow';
+                riskFactors = ['Moderate funding gap', 'Market competition', 'Location factors'];
+            } else {
+                riskLevel = 'High Risk';
+                riskColor = 'red';
+                riskFactors = ['Significant funding gap', 'High competition', 'Market uncertainties'];
+            }
+            
+            // Future Score Prediction
+            let futureScore = 70; // Base score
+            
+            if (fundingRatio > 0.8) futureScore += 15;
+            else if (fundingRatio > 0.5) futureScore += 5;
+            else futureScore -= 10;
+            
+            if (expectedRevenue > requiredFunding * 0.1) futureScore += 10;
+            if (areaType === 'urban') futureScore += 5;
+            if (['technology', 'healthcare', 'education'].includes(businessType)) futureScore += 10;
+            
+            futureScore = Math.min(95, Math.max(30, futureScore));
+            
+            let futureOutlook, futureColor;
+            if (futureScore >= 80) {
+                futureOutlook = 'Excellent Growth Potential';
+                futureColor = 'green';
+            } else if (futureScore >= 65) {
+                futureOutlook = 'Good Growth Prospects';
+                futureColor = 'blue';
+            } else if (futureScore >= 50) {
+                futureOutlook = 'Moderate Growth Expected';
+                futureColor = 'yellow';
+            } else {
+                futureOutlook = 'Challenging Growth Path';
+                futureColor = 'red';
+            }
+            
+            // Funding Breakdown
+            const fundingBreakdown = {
+                equipment: Math.round(requiredFunding * 0.4),
+                inventory: Math.round(requiredFunding * 0.25),
+                marketing: Math.round(requiredFunding * 0.15),
+                operations: Math.round(requiredFunding * 0.12),
+                contingency: Math.round(requiredFunding * 0.08)
+            };
+            
+            return {
+                funding: {
+                    status: fundingStatus,
+                    color: fundingColor,
+                    advice: fundingAdvice,
+                    gap: fundingGap,
+                    ratio: (fundingRatio * 100).toFixed(1),
+                    required: requiredFunding,
+                    available: availableFunding,
+                    breakdown: fundingBreakdown
+                },
+                risk: {
+                    level: riskLevel,
+                    color: riskColor,
+                    factors: riskFactors,
+                    score: riskScore
+                },
+                future: {
+                    score: futureScore,
+                    outlook: futureOutlook,
+                    color: futureColor
+                },
+                userDetails: {
+                    businessName: formData.get('business-name'),
+                    businessType: formData.get('business-type'),
+                    location: `${formData.get('business-city')}, ${formData.get('business-district')}, ${formData.get('business-state')}`,
+                    areaType: formData.get('area-type'),
+                    employeeCount: formData.get('employee-count'),
+                    experience: formData.get('business-experience'),
+                    expectedRevenue: expectedRevenue
+                }
+            };
+        }
+
+        function displayResults(analysis, formData) {
+            const resultsContainer = document.getElementById('analysis-results');
+            
+            resultsContainer.innerHTML = `
+                <!-- User Details Card -->
+                <div class="bg-white rounded-xl p-6 shadow-lg md:col-span-2 lg:col-span-3">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-blue-100 p-3 rounded-lg mr-4">
+                            <div class="text-2xl">👤</div>
+                        </div>
+                        <h4 class="text-2xl font-bold text-gray-800">Business Profile: ${analysis.userDetails.businessName}</h4>
+                    </div>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="space-y-3">
+                            <div>
+                                <span class="text-sm font-medium text-gray-500">Business Type</span>
+                                <div class="text-lg font-semibold text-gray-800 capitalize">${analysis.userDetails.businessType}</div>
+                            </div>
+                            <div>
+                                <span class="text-sm font-medium text-gray-500">Location</span>
+                                <div class="text-lg font-semibold text-gray-800">${analysis.userDetails.location}</div>
+                            </div>
+                        </div>
+                        <div class="space-y-3">
+                            <div>
+                                <span class="text-sm font-medium text-gray-500">Area Type</span>
+                                <div class="text-lg font-semibold text-gray-800 capitalize">${analysis.userDetails.areaType}</div>
+                            </div>
+                            <div>
+                                <span class="text-sm font-medium text-gray-500">Team Size</span>
+                                <div class="text-lg font-semibold text-gray-800">${analysis.userDetails.employeeCount || 'Not specified'}</div>
+                            </div>
+                        </div>
+                        <div class="space-y-3">
+                            <div>
+                                <span class="text-sm font-medium text-gray-500">Experience</span>
+                                <div class="text-lg font-semibold text-gray-800 capitalize">${analysis.userDetails.experience || 'Not specified'}</div>
+                            </div>
+                            <div>
+                                <span class="text-sm font-medium text-gray-500">Expected Monthly Revenue</span>
+                                <div class="text-lg font-semibold text-gray-800">₹${analysis.userDetails.expectedRevenue ? analysis.userDetails.expectedRevenue.toLocaleString() : 'Not specified'}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Predicted Funding Requirements -->
+                <div class="bg-white rounded-xl p-6 shadow-lg md:col-span-2">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-green-100 p-2 rounded-lg mr-3">
+                            <div class="text-2xl">💰</div>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-800">Predicted Funding Requirements</h4>
+                    </div>
+                    <div class="mb-6">
+                        <div class="text-3xl font-bold text-green-600 mb-2">₹${analysis.funding.required.toLocaleString()}</div>
+                        <div class="text-sm text-gray-600 mb-4">Total Estimated Funding Needed</div>
+                        
+                        <!-- Funding Comparison Chart -->
+                        <div class="mb-4">
+                            <div class="flex justify-between text-sm text-gray-600 mb-2">
+                                <span>Available: ₹${analysis.funding.available.toLocaleString()}</span>
+                                <span>Required: ₹${analysis.funding.required.toLocaleString()}</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-4 mb-2">
+                                <div class="bg-blue-500 h-4 rounded-full" style="width: ${Math.min(100, analysis.funding.ratio * 100)}%"></div>
+                            </div>
+                            <div class="text-center text-sm font-medium text-gray-700">
+                                Coverage: ${analysis.funding.ratio > 1 ? '100%' : (analysis.funding.ratio * 100).toFixed(1) + '%'}
+                            </div>
+                        </div>
+                        
+                        ${analysis.funding.gap > 0 ? `
+                        <div class="bg-red-50 border border-red-200 rounded-lg p-3 mb-4">
+                            <div class="text-red-800 font-semibold">Funding Gap: ₹${analysis.funding.gap.toLocaleString()}</div>
+                            <div class="text-red-600 text-sm">Additional funding needed to meet requirements</div>
+                        </div>
+                        ` : `
+                        <div class="bg-green-50 border border-green-200 rounded-lg p-3 mb-4">
+                            <div class="text-green-800 font-semibold">Funding Surplus: ₹${Math.abs(analysis.funding.gap).toLocaleString()}</div>
+                            <div class="text-green-600 text-sm">You have adequate funding for your business</div>
+                        </div>
+                        `}
+                    </div>
+                    <p class="text-gray-600 text-sm">${analysis.funding.advice}</p>
+                </div>
+
+                <!-- Funding Breakdown Chart -->
+                <div class="bg-white rounded-xl p-6 shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-purple-100 p-2 rounded-lg mr-3">
+                            <div class="text-2xl">📊</div>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-800">Funding Breakdown</h4>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span>Equipment & Infrastructure</span>
+                                <span>₹${analysis.funding.breakdown.equipment.toLocaleString()}</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-blue-500 h-2 rounded-full" style="width: 40%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span>Inventory & Stock</span>
+                                <span>₹${analysis.funding.breakdown.inventory.toLocaleString()}</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-green-500 h-2 rounded-full" style="width: 25%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span>Marketing & Promotion</span>
+                                <span>₹${analysis.funding.breakdown.marketing.toLocaleString()}</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-yellow-500 h-2 rounded-full" style="width: 15%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span>Operations & Salaries</span>
+                                <span>₹${analysis.funding.breakdown.operations.toLocaleString()}</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-orange-500 h-2 rounded-full" style="width: 12%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span>Contingency Fund</span>
+                                <span>₹${analysis.funding.breakdown.contingency.toLocaleString()}</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-red-500 h-2 rounded-full" style="width: 8%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-${analysis.risk.color}-100 p-2 rounded-lg mr-3">
+                            <div class="text-2xl">⚠️</div>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-800">Risk Assessment</h4>
+                    </div>
+                    <div class="mb-4">
+                        <div class="text-2xl font-bold text-${analysis.risk.color}-600 mb-2">${analysis.risk.level}</div>
+                    </div>
+                    <div class="space-y-1">
+                        ${analysis.risk.factors.map(factor => `<div class="text-sm text-gray-600">• ${factor}</div>`).join('')}
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-${analysis.future.color}-100 p-2 rounded-lg mr-3">
+                            <div class="text-2xl">📈</div>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-800">Future Outlook</h4>
+                    </div>
+                    <div class="mb-4">
+                        <div class="text-2xl font-bold text-${analysis.future.color}-600 mb-2">${analysis.future.score}/100</div>
+                        <div class="text-lg font-semibold text-gray-700">${analysis.future.outlook}</div>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                        <div class="bg-${analysis.future.color}-500 h-2 rounded-full" style="width: ${analysis.future.score}%"></div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-lg md:col-span-2 lg:col-span-3">
+                    <h4 class="text-lg font-bold text-gray-800 mb-4">Recommended Government Schemes</h4>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                            <h5 class="font-semibold text-gray-800 mb-2">MUDRA Loan</h5>
+                            <p class="text-sm text-gray-600 mb-3">Collateral-free loans up to ₹10 lakhs</p>
+                            <div class="text-xs text-blue-600 mb-3">Suitable for: Small businesses, First-time entrepreneurs</div>
+                            <a href="https://www.mudra.org.in/" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-600 text-white px-3 py-1 rounded text-xs font-semibold hover:bg-blue-700 transition-colors">
+                                Apply Now →
+                            </a>
+                        </div>
+                        <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                            <h5 class="font-semibold text-gray-800 mb-2">Credit Guarantee Scheme</h5>
+                            <p class="text-sm text-gray-600 mb-3">Loans up to ₹2 crores with 85% guarantee</p>
+                            <div class="text-xs text-blue-600 mb-3">Suitable for: Manufacturing, Service businesses</div>
+                            <a href="https://www.cgtmse.in/" target="_blank" rel="noopener noreferrer" class="inline-block bg-yellow-600 text-white px-3 py-1 rounded text-xs font-semibold hover:bg-yellow-700 transition-colors">
+                                Apply Now →
+                            </a>
+                        </div>
+                        ${formData.get('business-type') === 'technology' ? `
+                        <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                            <h5 class="font-semibold text-gray-800 mb-2">Startup India</h5>
+                            <p class="text-sm text-gray-600 mb-3">Tax benefits and funding support</p>
+                            <div class="text-xs text-blue-600 mb-3">Suitable for: Technology startups</div>
+                            <a href="https://www.startupindia.gov.in/" target="_blank" rel="noopener noreferrer" class="inline-block bg-green-600 text-white px-3 py-1 rounded text-xs font-semibold hover:bg-green-700 transition-colors">
+                                Apply Now →
+                            </a>
+                        </div>
+                        ` : ''}
+                        <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                            <h5 class="font-semibold text-gray-800 mb-2">Stand Up India</h5>
+                            <p class="text-sm text-gray-600 mb-3">₹10 lakhs to ₹1 crore for SC/ST and women</p>
+                            <div class="text-xs text-blue-600 mb-3">Suitable for: Women entrepreneurs, SC/ST</div>
+                            <a href="https://www.standupmitra.in/" target="_blank" rel="noopener noreferrer" class="inline-block bg-indigo-600 text-white px-3 py-1 rounded text-xs font-semibold hover:bg-indigo-700 transition-colors">
+                                Apply Now →
+                            </a>
+                        </div>
+                        <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                            <h5 class="font-semibold text-gray-800 mb-2">PMEGP Scheme</h5>
+                            <p class="text-sm text-gray-600 mb-3">Up to ₹25 lakhs with 15-35% subsidy</p>
+                            <div class="text-xs text-blue-600 mb-3">Suitable for: Manufacturing & Service units</div>
+                            <a href="https://www.kviconline.gov.in/pmegpeportal/pmegphome/index.jsp" target="_blank" rel="noopener noreferrer" class="inline-block bg-cyan-600 text-white px-3 py-1 rounded text-xs font-semibold hover:bg-cyan-700 transition-colors">
+                                Apply Now →
+                            </a>
+                        </div>
+                        <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                            <h5 class="font-semibold text-gray-800 mb-2">Make in India</h5>
+                            <p class="text-sm text-gray-600 mb-3">Manufacturing promotion with incentives</p>
+                            <div class="text-xs text-blue-600 mb-3">Suitable for: Manufacturing businesses</div>
+                            <a href="https://www.makeinindia.com/" target="_blank" rel="noopener noreferrer" class="inline-block bg-purple-600 text-white px-3 py-1 rounded text-xs font-semibold hover:bg-purple-700 transition-colors">
+                                Learn More →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('results-section').classList.remove('hidden');
+            document.getElementById('results-section').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            
+            // Add form data to FormData object
+            formData.append('business-name', document.getElementById('business-name').value);
+            formData.append('business-type', document.getElementById('business-type').value);
+            formData.append('business-state', document.getElementById('business-state').value);
+            formData.append('business-district', document.getElementById('business-district').value);
+            formData.append('business-city', document.getElementById('business-city').value);
+            formData.append('area-type', document.getElementById('area-type').value);
+            formData.append('available-funding', document.getElementById('available-funding').value);
+            formData.append('expected-revenue', document.getElementById('expected-revenue').value);
+            formData.append('employee-count', document.getElementById('employee-count').value);
+            formData.append('business-experience', document.getElementById('business-experience').value);
+            
+            const analysis = analyzeBusinessData(formData);
+            displayResults(analysis, formData);
+        }
+
+        function handleContactSubmit(event) {
+            event.preventDefault();
+            alert('Thank you for your message! Our team will contact you within 24 hours.');
+            event.target.reset();
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+
+        // Add active link highlighting
+        function updateActiveNavLink() {
+            const sections = ['home', 'services', 'policies', 'analyzer', 'contact'];
+            const navLinks = document.querySelectorAll('nav a[href^="#"]');
+            
+            let currentSection = '';
+            sections.forEach(section => {
+                const element = document.getElementById(section);
+                if (element) {
+                    const rect = element.getBoundingClientRect();
+                    if (rect.top <= 100 && rect.bottom >= 100) {
+                        currentSection = section;
+                    }
+                }
+            });
+            
+            navLinks.forEach(link => {
+                const href = link.getAttribute('href').substring(1);
+                if (href === currentSection) {
+                    link.classList.add('text-blue-600', 'font-bold');
+                    link.classList.remove('text-gray-700');
+                } else {
+                    link.classList.remove('text-blue-600', 'font-bold');
+                    link.classList.add('text-gray-700');
+                }
+            });
+        }
+
+        // Update active link on scroll
+        window.addEventListener('scroll', updateActiveNavLink);
+        
+        // Initialize active link on page load
+        window.addEventListener('load', updateActiveNavLink);
+
+        // Initialize the form
+        showStep(1);
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98cd59f9b76033a2',t:'MTc2MDE3NTE1OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
